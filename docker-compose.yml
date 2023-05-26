@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  next_fluentui:
+    image: node:18.14.0-alpine
+    working_dir: /work
+    user: node
+    volumes:
+      - .:/work:rw
+    ports:
+      - "3000:3000"
+    environment:
+      HOST: 0.0.0.0
+      NEXT_TELEMETRY_DISABLED: 1
+    command: npm run dev
